@@ -144,12 +144,26 @@
     function toggleOpenActive(e) {
       console.log(e.propertyName);
         this.classList.toggle('open-active');
-      
+    }
+
+    function escape(e) {
+        console.log("Usao");
+        console.log(e.keyCode);
+      if (e.keyCode === 27) {
+        console.log("Usao");
+        for (let i = 1; i <= 5; i++) {
+        let spec = 'panel' + i;
+        panels[i-1].className = `panel ${spec}`;
+      }
+      }
     }
 
     const panels = document.querySelectorAll('.panel');
     
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+
+
+    document.addEventListener('keydown', escape); 
 
   </script>
 
